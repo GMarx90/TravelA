@@ -107,10 +107,12 @@
         <artifactId>flyway-maven-plugin</artifactId>
         <version>6.2.0</version>
         <configuration>
-          <url>jdbc:postgresql://E:\TravelA\src\db</url>
+          <url>jdbc:postgresql://localhost:5432/postgres?currentSchema=nowy_schemat</url>
 <!--          <url>jdbc:postgresql://localhost:5432/postgres?currentSchema=nowy</url>-->
-          <user>postgres</user>
-          <password>Natalia2012</password>
+          <user>user</user>
+          <password>user</password>
+<!--          <user>postgres</user>-->
+<!--          <password>Natalia2012</password>-->
         </configuration>
 <!--        <dependencies>-->
 <!--          <dependency>-->
