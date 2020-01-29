@@ -1,4 +1,7 @@
-package org.example.travel_agency.destination;
+package org.example.travel_agency.destination.service;
+
+
+import org.example.travel_agency.destination.service.PersonNumb;
 
 public class Cost {
         PersonNumb personNumb;

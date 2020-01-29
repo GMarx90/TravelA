@@ -1,15 +1,27 @@
-package org.example.travel_agency.destination;
+package org.example.travel_agency.destination.entities;
 
-public class  City {
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@NoArgsConstructor
+public class City {
+
+    @Id
+    @GeneratedValue
+    private int id_City;
 
     private String city_Name;
+
+    @OneToOne
+    @JoinColumn
     private Country country;
+
 
     public int getId_City() {
         return id_City;
     }
-
-    private int id_City;
 
 
     public String getCity_Name() {
