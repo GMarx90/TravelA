@@ -1,16 +1,29 @@
-package org.example.travel_agency.destination;
+package org.example.travel_agency.destination.entities;
 
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+@NoArgsConstructor
 public class Airport {
 
-        CityAirport cityAirport;
+    @Id
+    @GeneratedValue
+    private int id_Airport;
+
+    @OneToOne
+    private CityAirport cityAirport;
+
+    private String airport_Name;
 
     public int getId_Airport() {
         return id_Airport;
     }
 
-    private int id_Airport;
-
-        private String airport_Name;
 
     public Airport(CityAirport cityAirport, String airport_Name) {
         this.cityAirport = cityAirport;

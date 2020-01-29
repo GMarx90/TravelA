@@ -1,9 +1,23 @@
-package org.example.travel_agency.destination;
+package org.example.travel_agency.destination.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@NoArgsConstructor
 public class Hotel {
+
+    @Id
+    @GeneratedValue
+    private  int  id_Hotel;
     private double stars;
     private String allimentation;
     private String description;
+
+    @OneToOne
+    @JoinColumn
     private City city;
 
     public Hotel(double stars, String allimentation, String description, City city) {

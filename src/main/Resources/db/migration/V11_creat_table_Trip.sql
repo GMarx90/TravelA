@@ -6,7 +6,7 @@ CREAT TABLE Trip (
     Type varchar (15) not null,
     price double not null,
     airport_fk int foreign key REFERNCE Airports(id_Airport),
-    depart_Date varchar not null,
-    return_Date varchar not null,
+    depart_Date date not null,
+    return_Date date not null,
     places_Left int not null
     )

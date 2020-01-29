@@ -1,4 +1,4 @@
-package org.example.travel_agency.destination;
+package org.example.travel_agency.destination.service;
 
 import java.time.LocalDate;
 import java.time.Period;
