@@ -1,27 +1,31 @@
 package org.example.travel_agency.destination;
 
 import java.time.LocalDate;
-import java.time.Period;
 
 public class Trip {
     Hotel hotel;
-    private LocalDate dateOfDeparture = LocalDate.parse("2020-07-11");
-    private LocalDate dateOfReturn = LocalDate.parse("2020-07-25");
-    private Departure palceOfDeparture;
+    private LocalDate depart_Date = LocalDate.parse("2020-07-11");
+    private LocalDate return_Date = LocalDate.parse("2020-07-25");
+    private Airport palceOfAirport;
     private HolidayDuration holiday;
     private int price;
 
+    public int getId_Trip() {
+        return id_Trip;
+    }
+
+    private int id_Trip;
     /*  HolidayDuration holiday jeszcze mozna dodac do konstruktora tylko jak to potem podpiac*/
-    public Trip(Hotel hotel, LocalDate dateOfDeparture, LocalDate dateOfReturn, Departure palceOfDeparture, int price) {
+    public Trip(Hotel hotel, LocalDate depart_Date, LocalDate return_Date, Airport palceOfAirport, int price) {
         this.hotel = hotel;
-        this.dateOfDeparture = dateOfDeparture;
-        this.dateOfReturn = dateOfReturn;
-        this.palceOfDeparture = palceOfDeparture;
+        this.depart_Date = depart_Date;
+        this.return_Date = return_Date;
+        this.palceOfAirport = palceOfAirport;
    /*     this.holiday = holiday;*/
         this.price = price;
     }
 
-    public Trip(Hotel stark, int i, int i1, Departure ktw, int price) {
+    public Trip(Hotel stark, int i, int i1, Airport ktw, int price) {
     }/*
     public Period holdayDuration(int dateOfDeparture, int dateOfReturn){
         Period holidayDuration=Period.between(dateOfDeparture, dateOfReturn);
@@ -37,28 +41,28 @@ public class Trip {
         this.hotel = hotel;
     }
 
-    public LocalDate getDateOfDeparture() {
-        return dateOfDeparture;
+    public LocalDate getDepart_Date() {
+        return depart_Date;
     }
 
-    public void setDateOfDeparture(LocalDate dateOfDeparture) {
-        this.dateOfDeparture = dateOfDeparture;
+    public void setDepart_Date(LocalDate depart_Date) {
+        this.depart_Date = depart_Date;
     }
 
-    public LocalDate getDateOfReturn() {
-        return dateOfReturn;
+    public LocalDate getReturn_Date() {
+        return return_Date;
     }
 
-    public void setDateOfReturn(LocalDate dateOfReturn) {
-        this.dateOfReturn = dateOfReturn;
+    public void setReturn_Date(LocalDate return_Date) {
+        this.return_Date = return_Date;
     }
 
-    public Departure getPalceOfDeparture() {
-        return palceOfDeparture;
+    public Airport getPalceOfAirport() {
+        return palceOfAirport;
     }
 
-    public void setPalceOfDeparture(Departure palceOfDeparture) {
-        this.palceOfDeparture = palceOfDeparture;
+    public void setPalceOfAirport(Airport palceOfAirport) {
+        this.palceOfAirport = palceOfAirport;
     }
 
     public HolidayDuration getHoliday() {
