@@ -22,7 +22,7 @@ public class Trip {
 
     @OneToOne
     @JoinColumn
-    private Airport palceOfAirport;
+    private Airport placeOfAirport;
 
 //    private HolidayDuration holiday;
     private int price;
@@ -33,11 +33,11 @@ public class Trip {
     }
 
 
-    public Trip(Hotel hotel, Date depart_Date, Date return_Date, Airport palceOfAirport, int price) {
+    public Trip(Hotel hotel, Date depart_Date, Date return_Date, Airport placeOfAirport, int price) {
         this.hotel = hotel;
         this.depart_Date = depart_Date;
         this.return_Date = return_Date;
-        this.palceOfAirport = palceOfAirport;
+        this.placeOfAirport = placeOfAirport;
    /*     this.holiday = holiday;*/
         this.price = price;
     }
@@ -74,12 +74,12 @@ public class Trip {
         this.return_Date = return_Date;
     }
 
-    public Airport getPalceOfAirport() {
-        return palceOfAirport;
+    public Airport getPlaceOfAirport() {
+        return placeOfAirport;
     }
 
-    public void setPalceOfAirport(Airport palceOfAirport) {
-        this.palceOfAirport = palceOfAirport;
+    public void setPlaceOfAirport(Airport palceOfAirport) {
+        this.placeOfAirport = palceOfAirport;
     }
 
 //    public HolidayDuration getHoliday() {

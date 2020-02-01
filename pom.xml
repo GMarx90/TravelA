@@ -47,10 +47,10 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.flywaydb</groupId>
-      <artifactId>flyway-core</artifactId>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.flywaydb</groupId>-->
+<!--      <artifactId>flyway-core</artifactId>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -95,36 +95,36 @@
     </dependency>
   </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
+<!--  <build>-->
+<!--    <plugins>-->
+<!--      <plugin>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--      </plugin>-->
 
-      <plugin>
-        <groupId>org.flywaydb</groupId>
-        <artifactId>flyway-maven-plugin</artifactId>
-        <version>6.2.0</version>
-        <configuration>
-          <url>jdbc:postgresql://localhost:5432/postgres?currentSchema=nowy_schemat</url>
-<!--          <url>jdbc:postgresql://localhost:5432/postgres?currentSchema=nowy</url>-->
-          <user>user</user>
-          <password>user</password>
-<!--          <user>postgres</user>-->
-<!--          <password>Natalia2012</password>-->
-        </configuration>
-<!--        <dependencies>-->
-<!--          <dependency>-->
-<!--            <groupId>com.h2database</groupId>-->
-<!--            <artifactId>h2</artifactId>-->
-<!--            <version>1.4.197</version>-->
-<!--          </dependency>-->
-<!--        </dependencies>-->
-      </plugin>
-    </plugins>
+<!--      <plugin>-->
+<!--        <groupId>org.flywaydb</groupId>-->
+<!--        <artifactId>flyway-maven-plugin</artifactId>-->
+<!--        <version>6.2.0</version>-->
+<!--        <configuration>-->
+<!--          <url>jdbc:postgresql://localhost:5432/postgres?currentSchema=nowy_schemat</url>-->
+<!--&lt;!&ndash;          <url>jdbc:postgresql://localhost:5432/postgres?currentSchema=nowy</url>&ndash;&gt;-->
+<!--          <user>user</user>-->
+<!--          <password>user</password>-->
+<!--&lt;!&ndash;          <user>postgres</user>&ndash;&gt;-->
+<!--&lt;!&ndash;          <password>Natalia2012</password>&ndash;&gt;-->
+<!--        </configuration>-->
+<!--&lt;!&ndash;        <dependencies>&ndash;&gt;-->
+<!--&lt;!&ndash;          <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>com.h2database</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>h2</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>1.4.197</version>&ndash;&gt;-->
+<!--&lt;!&ndash;          </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependencies>&ndash;&gt;-->
+<!--      </plugin>-->
+<!--    </plugins>-->
 
 
-  </build>
+<!--  </build>-->
 
 </project>

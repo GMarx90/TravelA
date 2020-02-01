@@ -1,9 +1,13 @@
 package org.example.travel_agency.destination.service;
 
 
-import org.example.travel_agency.destination.service.PersonNumb;
+import org.example.travel_agency.destination.entities.City;
+import org.example.travel_agency.destination.repository.TripRepository;
 
 public class Cost {
+
+
+
         PersonNumb personNumb;
         private double adultPrice;
         private double childPrice= 0.3*adultPrice;
@@ -17,12 +21,8 @@ public class Cost {
 
 }}*/
 
-        public Cost(PersonNumb personNumb, double adultPrice, double childPrice, double teensPrice) {
-                this.personNumb = personNumb;
-                this.adultPrice = adultPrice;
-                this.childPrice = childPrice;
-                this.teensPrice = teensPrice;
-        }
+
+
 
         public PersonNumb getPersonNumb() {
                 return personNumb;

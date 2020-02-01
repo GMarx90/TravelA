@@ -1,6 +1,7 @@
 package org.example.travel_agency.destination;
 
 import org.example.travel_agency.destination.entities.*;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.persistence.EntityManager;
@@ -11,9 +12,6 @@ import java.util.Date;
 
 import static org.hibernate.jpa.AvailableSettings.PERSISTENCE_UNIT_NAME;
 
-/**
- * Hello world!
- */
 
 @SpringBootApplication
 public class App {
@@ -21,23 +19,8 @@ public class App {
     private static EntityManagerFactory factory;
 
     public static void main(String[] args) {
-        factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-        EntityManager em = factory.createEntityManager();
 
-        em.close();
-        factory.close();
+        SpringApplication.run(App.class, args);
 
-
-//        Country Hiszpania = new Country("Hiszpania");
-//        City Barcelona = new City("Barcelona", Hiszpania);
-//        Hotel Stark = new Hotel(3.5, "B&b", "Near to beach", Barcelona);
-//        CityAirport Katowice = new CityAirport("Katowice");
-//        Airport KTW = new Airport(Katowice, "Pyrzowice");
-//        Date dateOfDeparture = new Date();
-//        dateOfDeparture.setTime(1000);
-//        Date dateOfReturn = new Date();
-//        dateOfReturn.setTime(2000);
-//        Trip trip1 = new Trip(Stark, dateOfDeparture, dateOfReturn, KTW, 1890);
-//        System.out.println(trip1.getHotel());
     }
 }

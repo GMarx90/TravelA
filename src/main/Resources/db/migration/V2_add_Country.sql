@@ -1,5 +1,5 @@
 
-INSERT INTO Country (country_Name) values ("Hiszpania");
+INSERT INTO Country (country_Name) values ('Hiszpania');
 INSERT INTO Country (country_Name) values ("Grecja");
 INSERT INTO Country (country_Name) values ("Francja");
 INSERT INTO Country (country_Name) values ("Chorwacja");

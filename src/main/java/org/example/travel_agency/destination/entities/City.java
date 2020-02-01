@@ -4,22 +4,24 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+
 @Entity
 @NoArgsConstructor
 public class City {
 
     @Id
-    @GeneratedValue
-    private int id_City;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_City;
 
     private String city_Name;
 
     @OneToOne
     @JoinColumn
+    @Column(name= "country_fk")
     private Country country;
 
 
-    public int getId_City() {
+    public Integer getId_City() {
         return id_City;
     }
 
