@@ -42,13 +42,6 @@ public class Trip {
         this.price = price;
     }
 
-    public Trip(Hotel stark, int i, int i1, Airport ktw, int price) {
-    }/*
-    public Period holdayDuration(int dateOfDeparture, int dateOfReturn){
-        Period holidayDuration=Period.between(dateOfDeparture, dateOfReturn);
-        return holidayDuration;
-
-    }*/
 
     public Hotel getHotel() {
         return hotel;
