@@ -17,7 +17,7 @@ public class City {
 
     @OneToOne
     @JoinColumn
-    @Column(name= "country_fk")
+//    @Column(name= "country_fk")
     private Country country;
 
 
