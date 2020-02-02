@@ -2,15 +2,18 @@ package org.example.travel_agency.destination.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Hotel {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int  id_Hotel;
     private double stars;
     private String allimentation;
@@ -27,37 +30,6 @@ public class Hotel {
         this.city = city;
     }
 
-    public double getStars() {
-        return stars;
-    }
-
-    public void setStars(double stars) {
-        this.stars = stars;
-    }
-
-    public String getAllimentation() {
-        return allimentation;
-    }
-
-    public void setAllimentation(String allimentation) {
-        this.allimentation = allimentation;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public City getCity() {
-        return city;
-    }
-
-    public void setCity(City city) {
-        this.city = city;
-    }
 
     @Override
     public String toString() {

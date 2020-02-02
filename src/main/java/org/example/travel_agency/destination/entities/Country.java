@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Country")
+@Table
 @NoArgsConstructor
 public class Country {
 

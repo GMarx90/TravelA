@@ -16,12 +16,14 @@ public class Trip {
 
     @OneToOne
     @JoinColumn
+//    @JoinColumn(name= "hotel_id")
     private Hotel hotel;
     private Date depart_Date;
     private Date return_Date;
 
     @OneToOne
     @JoinColumn
+//    @JoinColumn(name="id_airport")
     private Airport placeOfAirport;
 
 //    private HolidayDuration holiday;
