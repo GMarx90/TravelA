@@ -26,7 +26,7 @@ public class RController {
         return tripsService.showAllTrips();
     }
 
-    @PostMapping("/trip")
+    @PostMapping("/addtrip")
     public HttpStatus addTrip(@RequestBody Trip trip) {
         boolean b = tripsService.addTrip(trip);
         if (b) {
