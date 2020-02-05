@@ -4,7 +4,6 @@ import org.example.travel_agency.destination.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 
@@ -28,7 +27,7 @@ public class RController {
         this.hotelService = hotelService;
         this.cityAirportService = cityAirportService;
         this.airportService = airportService;}
-        
+
 
      @GetMapping("/countries")
     public List<Country> showAllC() {
