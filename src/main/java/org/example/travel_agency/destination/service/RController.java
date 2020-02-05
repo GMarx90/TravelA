@@ -30,65 +30,65 @@ public class RController {
         this.cityAirportService = cityAirportService;
         this.airportService = airportService;}
         
-// @GetMapping("/log")
-//             public void welcome(){
-//              sout("Welcome");
+@GetMapping("/log")
+            public void welcome(){
+             sout("Welcome");
                 
-     @GetMapping("/countries")
+     @GetMapping("user/countries")
     public List<Country> showAllC() {
         return countryService.showAllCountries();}
     
-    @GetMapping("/cities")
+    @GetMapping("user/cities")
      public List<City> showAllCities() {
         return tripsService.findAll();}
     
-    @GetMapping("/hotels")
+    @GetMapping("user/hotels")
       public List<Hotel> showAllHotels() {
         return hotelService.findAll();}
     
-    @GetMapping("/departcities")
+    @GetMapping("user/departcities")
       public List<CityAirport> showAllCityAirport() {
         return cityAirportService.findAll();}
     
-    @GetMapping("/airports")
+    @GetMapping("user/airports")
      public List<Airport> showAllAirports() {
         return airportService.findAll();}
     
-    @GetMapping("/trips")
+    @GetMapping("user/trips")
     public List<Trip> showAll() {
         return tripsService.showAllTrips();}
     
-    @PostMapping("/country")
+    @PostMapping("admin/country")
     public HttpStatus addCountry(@RequestBody Country country) {
         boolean b = countryService.addCountry(country);
         if (b) {return HttpStatus.ACCEPTED;}
         return HttpStatus.BAD_REQUEST;}
     
-    @PostMapping("/city")
+    @PostMapping("admin/city")
     public HttpStatus addCity (@RequestBody City city){
         boolean b=citySerive.addCity(city)
             if (b){return HttpStatus.ACCEPTED;}
             return HttpStatus.BAD_REQUST;}
     
-    @PostMapping("/hotel")
+    @PostMapping("admin/hotel")
     public HttpStatus addHotel (@RequestBody Hotel hotel){
         boolean b=hotelService.addHotel();
         if (b){return HttpStatus.ACCEPTED;}
         return HttpStatus.BAD_REQUST;}
     
-    @PostMapping("/departcity")
+    @PostMapping("admin/departcity")
     public HttpStatus addCityAirport(CityAirport cityAirport)
         boolean (b) =cityAirport.addCityAirport();
         if (b) {return HttpStatus.ACCEPTED;}
         return HttpStatus.BAD_REQUEST;}
 
-    @PostMapping("/airport")
+    @PostMapping("admin/airport")
     public HttpStatus addAirport (Airport airport){
         boolean b=airportService.addAirport();
             if(b) {return HttpStatus.ACCEPTED;}
             return HttpStatus.BAD_REQUEST;}
         
-    @PostMapping("/trip")
+    @PostMapping("admin/trip")
     public HttpStatus addTrip(@RequestBody Trip trip) {
         boolean b = tripsService.addTrip(trip);
         if (b) {return HttpStatus.ACCEPTED;}
