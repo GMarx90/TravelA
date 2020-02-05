@@ -6,33 +6,33 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@NoArgsConstructor
-public class Trip {
+    @NoArgsConstructor
+    public class Trip {
 
-    @Id
-    @GeneratedValue
-    private int id_Trip;
-    /*  HolidayDuration holiday jeszcze mozna dodac do konstruktora tylko jak to potem podpiac*/
+        @Id
+        @GeneratedValue
+        private int id_Trip;
+        /*  HolidayDuration holiday jeszcze mozna dodac do konstruktora tylko jak to potem podpiac*/
 
-    @OneToOne
-    @JoinColumn
+        @OneToOne
+        @JoinColumn
 //    @JoinColumn(name= "hotel_id")
-    private Hotel hotel;
-    private Date depart_Date;
-    private Date return_Date;
+        private Hotel hotel;
+        private Date depart_Date;
+        private Date return_Date;
 
-    @OneToOne
-    @JoinColumn
+        @OneToOne
+        @JoinColumn
 //    @JoinColumn(name="id_airport")
-    private Airport placeOfAirport;
+        private Airport placeOfAirport;
 
-//    private HolidayDuration holiday;
-    private int price;
+        //    private HolidayDuration holiday;
+        private int price;
 
-    public int getId_Trip() {
+        public int getId_Trip() {
 
-        return id_Trip;
-    }
+            return id_Trip;
+        }
 
 
     public Trip(Hotel hotel, Date depart_Date, Date return_Date, Airport placeOfAirport, int price) {

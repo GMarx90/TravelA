@@ -33,4 +33,7 @@ public class Country {
                 "country='" + country_Name + '\'' +
                 '}';
     }
+
+    public static class Orders {
+    }
 }
