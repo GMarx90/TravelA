@@ -1,12 +1,13 @@
 package org.example.travel_agency.destination.entities;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Airport {
@@ -16,34 +17,23 @@ public class Airport {
     private int id_Airport;
 
     @OneToOne
+    @JoinColumn(name="cityAirportId")   // Brakło JoinColumn
     private CityAirport cityAirport;
 
     private String airport_Name;
 
-    public int getId_Airport() {
-        return id_Airport;
-    }
 
+//     public Airport(CityAirport cityAirport, String airport_Name) {
+//         this.cityAirport = cityAirport;
+//         this.airport_Name = airport_Name;
+//     }
+//                 NIE WIEM CZY TAKI KONSTRUKTOR JEST TU WGL POTRZEBNY
 
-    public Airport(CityAirport cityAirport, String airport_Name) {
-        this.cityAirport = cityAirport;
-        this.airport_Name = airport_Name;
-    }
-
-    public CityAirport getCityAirport() {
-        return cityAirport;
-    }
-
+    
     public void setCityAirport(CityAirport cityAirport) {
         this.cityAirport = cityAirport;
     }
 
-    public String getAirport_Name() {
-        return airport_Name;
     }
 
-    public void setAirport_Name(String airport_Name) {
-        this.airport_Name = airport_Name;
-    }
-}
 
