@@ -16,8 +16,7 @@ public class City {
     private String city_Name;
 
     @OneToOne
-    @JoinColumn
-@Column(name= "countryFk") //Zobacz czy teraz działa
+    @JoinColumn(name= "countryFk") //Zobacz czy teraz działa
     private Country country;
 
     public City(String city_Name, Country country) {
