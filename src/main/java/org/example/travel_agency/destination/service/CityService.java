@@ -12,21 +12,21 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class HotelService {
+public class CityService {
 
-    private HotelRepository hotelRepository;
+    private CityRepository cityRepository;
 
     @Autowired
-    public HotelService(HotelRepository hotelRepository) {
-        this.hotelRepository = hotelRepository;
+    public CityService(CityRepository cityRepositor) {
+        this.cityRepository = cityRepository;
     }
 
     public List<City> showAllHotels() {
-        return hotelRepository.findAll();
+        return cityRepository.findAll();
     }
 
-    public boolean addHotel(Hotel hotel) {
-        hotelRepository.save(hotel);
+    public boolean addHotel(City city) {
+        cityRepository.save(city);
         return true;
     }
 
