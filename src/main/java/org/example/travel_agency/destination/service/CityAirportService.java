@@ -26,7 +26,7 @@ public class CityAirportService {
         return cityAirportRepository.findAll();
     }
 
-    public boolean addHotel(CityAirport cityAirport) {
+    public boolean addCityAirport(CityAirport cityAirport) {
         cityAirportRepository.save(cityAirport);
         return true;
     }
