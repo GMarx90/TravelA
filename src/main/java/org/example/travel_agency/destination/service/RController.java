@@ -30,9 +30,9 @@ public class RController {
         this.cityAirportService = cityAirportService;
         this.airportService = airportService;}
         
-@GetMapping("/log")
-            public void welcome(){
-             sout("Welcome");
+// @GetMapping("/log")
+//             public void welcome(){
+//              sout("Welcome");
                 
      @GetMapping("/countries")
     public List<Country> showAllC() {
