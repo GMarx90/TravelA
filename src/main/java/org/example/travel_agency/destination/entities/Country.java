@@ -3,11 +3,11 @@ package org.example.travel_agency.destination.entities;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
 @Getter @Setter
 @Entity
 @Table
 @NoArgsConstructor
-
 public class Country {
 
     @Id
