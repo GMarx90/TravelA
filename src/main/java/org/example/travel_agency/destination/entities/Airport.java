@@ -1,13 +1,13 @@
 package org.example.travel_agency.destination.entities;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Airport {
@@ -17,7 +17,7 @@ public class Airport {
     private int id_Airport;
 
     @OneToOne
-    @JoinColumn(name="cityAirportId)   // Brakło JoinColumn
+    @JoinColumn(name="cityAirportId")   // Brakło JoinColumn
     private CityAirport cityAirport;
 
     private String airport_Name;
@@ -35,5 +35,5 @@ public class Airport {
     }
 
     }
-}
+
 

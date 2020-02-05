@@ -5,6 +5,7 @@ import org.example.travel_agency.destination.entities.City;
 import org.example.travel_agency.destination.entities.Hotel;
 import org.example.travel_agency.destination.entities.Trip;
 import org.example.travel_agency.destination.repository.CityRepository;
+import org.example.travel_agency.destination.repository.HotelRepository;
 import org.example.travel_agency.destination.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

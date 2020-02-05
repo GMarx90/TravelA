@@ -1,12 +1,16 @@
 package org.example.travel_agency.destination.entities;
 
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class CityAirport {
@@ -21,6 +25,7 @@ public class CityAirport {
         this.city_Airport_Name = city_Airport_Name;
     }
 
+}
 
  
 

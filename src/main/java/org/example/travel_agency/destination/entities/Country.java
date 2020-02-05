@@ -1,10 +1,13 @@
 package org.example.travel_agency.destination.entities;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 @Table
 @NoArgsConstructor

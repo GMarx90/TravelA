@@ -1,11 +1,14 @@
 package org.example.travel_agency.destination.entities;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Trip {

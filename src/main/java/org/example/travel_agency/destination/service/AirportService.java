@@ -6,6 +6,7 @@ import org.example.travel_agency.destination.entities.Hotel;
 import org.example.travel_agency.destination.entities.CityAirport;
 import org.example.travel_agency.destination.entities.Airport;
 import org.example.travel_agency.destination.entities.Trip;
+import org.example.travel_agency.destination.repository.AirportRepository;
 import org.example.travel_agency.destination.repository.CityRepository;
 import org.example.travel_agency.destination.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,10 @@ import java.util.List;
 @Service
 public class AirportService {
 
-    private AirportRepositry airportRepository;
+    private AirportRepository airportRepository;
 
     @Autowired
-    public AirportService(AirportRepositry airportRepository) {
+    public AirportService(AirportRepository airportRepository) {
         this.airportRepository = airportRepository;
     }
 

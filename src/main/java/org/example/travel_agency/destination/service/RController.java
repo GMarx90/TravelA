@@ -1,7 +1,6 @@
 package org.example.travel_agency.destination.service;
 
-import org.example.travel_agency.destination.entities.Country;
-import org.example.travel_agency.destination.entities.Trip;
+import org.example.travel_agency.destination.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -36,20 +35,20 @@ public class RController {
         return countryService.showAllCountries();}
     
     @GetMapping("/cities")
-     public List<City> showAllCities() {
-        return tripsService.findAll();}
+     public List<Trip> showAllCities() {
+        return tripsService.showAllTrips();}
     
     @GetMapping("/hotels")
       public List<Hotel> showAllHotels() {
-        return hotelService.findAll();}
+        return hotelService.showAllHotels();}
     
     @GetMapping("/departcities")
       public List<CityAirport> showAllCityAirport() {
-        return cityAirportService.findAll();}
+        return cityAirportService.showAllCityAirport();}
     
     @GetMapping("/airports")
      public List<Airport> showAllAirports() {
-        return airportService.findAll();}
+        return airportService.showAllAirports();}
     
     @GetMapping("/trips")
     public List<Trip> showAll() {
@@ -63,25 +62,25 @@ public class RController {
     
     @PostMapping("/city")
     public HttpStatus addCity (@RequestBody City city){
-        boolean b=citySerive.addCity(city)
+        boolean b=cityService.addCity(city);
             if (b){return HttpStatus.ACCEPTED;}
-            return HttpStatus.BAD_REQUST;}
+            return HttpStatus.BAD_REQUEST;}
     
     @PostMapping("/hotel")
     public HttpStatus addHotel (@RequestBody Hotel hotel){
-        boolean b=hotelService.addHotel();
+        boolean b=hotelService.addHotel(hotel);
         if (b){return HttpStatus.ACCEPTED;}
-        return HttpStatus.BAD_REQUST;}
+        return HttpStatus.BAD_REQUEST;}
     
     @PostMapping("/departcity")
-    public HttpStatus addCityAirport(CityAirport cityAirport)
-        boolean (b) =cityAirport.addCityAirport();
-        if (b) {return HttpStatus.ACCEPTED;}
-        return HttpStatus.BAD_REQUEST;}
+    public HttpStatus addCityAirport(CityAirport cityAirport){
+        boolean b=cityAirportService.addCityAirport(cityAirport);
+            if(b) {return HttpStatus.ACCEPTED;}
+            return HttpStatus.BAD_REQUEST;}
 
     @PostMapping("/airport")
     public HttpStatus addAirport (Airport airport){
-        boolean b=airportService.addAirport();
+        boolean b=airportService.addAirport(airport);
             if(b) {return HttpStatus.ACCEPTED;}
             return HttpStatus.BAD_REQUEST;}
         
