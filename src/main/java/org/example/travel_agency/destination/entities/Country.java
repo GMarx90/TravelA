@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table
 @NoArgsConstructor
+
 public class Country {
 
     @Id
@@ -20,16 +21,7 @@ public class Country {
     }
 
 
-//     public int getId_Country() {
-//         return id_Country;
-//     }
-
-//     public String getCountry_Name() {
-//         return this.country_Name;
-//     }
-
- 
-    @Override
+   @Override
     public String toString() {
         return "Country{" +
                 "country='" + country_Name + '\'' +
