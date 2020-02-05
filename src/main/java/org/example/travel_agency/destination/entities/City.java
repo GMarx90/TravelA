@@ -4,9 +4,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
+@Getter @Setter
 @Entity
 @NoArgsConstructor
+
 public class City {
 
     @Id
@@ -17,22 +18,8 @@ public class City {
 
     @OneToOne
     @JoinColumn
-//    @Column(name= "country_fk")
+@Column(name= "countryFk") //Zobacz czy teraz działa
     private Country country;
-
-
-    public Integer getId_City() {
-        return id_City;
-    }
-
-
-    public String getCity_Name() {
-        return this.city_Name;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
 
     public City(String city_Name, Country country) {
         this.city_Name = city_Name;
