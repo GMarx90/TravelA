@@ -21,11 +21,11 @@ public class CityService {
         this.cityRepository = cityRepository;
     }
 
-    public List<City> showAllHotels() {
+    public List<City> showAllCities() {
         return cityRepository.findAll();
     }
 
-    public boolean addHotel(City city) {
+    public boolean addCity(City city) {
         cityRepository.save(city);
         return true;
     }
