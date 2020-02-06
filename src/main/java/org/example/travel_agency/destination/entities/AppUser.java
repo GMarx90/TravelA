@@ -19,7 +19,7 @@ import java.util.Collection;
 @Entity
 @NoArgsConstructor
 @Controller
-public class User implements UserDetails {
+public class AppUser implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

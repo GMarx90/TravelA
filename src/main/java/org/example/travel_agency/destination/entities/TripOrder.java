@@ -15,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Controller
-public class Order {
+public class TripOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +25,11 @@ public class Order {
     private int babiesNumber;
 
     @OneToOne
-    @JoinColumn
+    @JoinColumn(name = "TripId")
     private Trip trip;
     @OneToOne
-    @JoinColumn
-    private User user;
+    @JoinColumn(name = "AppUserId")
+    private AppUser appUser;
 
 //        public Double calculateTotalPrice(Trip trip){
 //            return this.getAdultsNumber()*trip.getPrice()+this.getChildrenNumber()*0.7*trip.getPrice()+this.getBabiesNumber()*.3*trip.getPrice();

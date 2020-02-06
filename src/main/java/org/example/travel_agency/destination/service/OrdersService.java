@@ -1,9 +1,7 @@
 package org.example.travel_agency.destination.service;
 
-import org.example.travel_agency.destination.entities.Order;
-import org.example.travel_agency.destination.entities.Trip;
+import org.example.travel_agency.destination.entities.TripOrder;
 import org.example.travel_agency.destination.repository.OrderRepository;
-import org.example.travel_agency.destination.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,12 +25,12 @@ public class OrdersService {
 //        this.trip = trip;
 //    }
 
-    public List<Order> showAllOrders() {
+    public List<TripOrder> showAllOrders() {
         return orderRepository.findAll();
     }
 
-    public boolean addOrder(Order order) {
-        orderRepository.save(order);
+    public boolean addOrder(TripOrder tripOrder) {
+        orderRepository.save(tripOrder);
         return true;
     }
 //

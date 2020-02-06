@@ -53,7 +53,7 @@ public class RController {
         return tripsService.showAllTrips();}
 
     @GetMapping("/orders")
-    public List<Order> showAllOrders() {
+    public List<TripOrder> showAllOrders() {
         return ordersService.showAllOrders();}
 
 
@@ -95,8 +95,8 @@ public class RController {
 
 
     @PostMapping("/order")
-    public HttpStatus addOrder(@RequestBody Order order) {
-        boolean b = ordersService.addOrder(order);
+    public HttpStatus addOrder(@RequestBody TripOrder tripOrder) {
+        boolean b = ordersService.addOrder(tripOrder);
         if (b) {return HttpStatus.ACCEPTED;}
         return HttpStatus.BAD_REQUEST;}
 

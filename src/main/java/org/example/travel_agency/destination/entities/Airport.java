@@ -17,7 +17,7 @@ public class Airport {
     private int id_Airport;
 
     @OneToOne
-    @JoinColumn(name="cityAirportId")   // Brakło JoinColumn
+    @JoinColumn//name="cityAirportId")   // Brakło JoinColumn
     private CityAirport cityAirport;
 
     private String airport_Name;
