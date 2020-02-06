@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Getter
@@ -16,8 +17,8 @@ import javax.persistence.Id;
 public class CityAirport {
 
     @Id
-    @GeneratedValue
-    private int id_City_Airport;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_City_Airport;
 
     private String city_Airport_Name;
 

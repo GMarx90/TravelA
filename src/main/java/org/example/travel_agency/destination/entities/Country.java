@@ -14,8 +14,8 @@ import javax.persistence.*;
 public class Country {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_Country;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_Country;
 
     private String country_Name;
     

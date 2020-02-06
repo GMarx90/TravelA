@@ -14,13 +14,13 @@ public class Hotel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int  id_Hotel;
+    private Integer id_Hotel;
     private double stars;
     private String allimentation;
     private String description;
 
     @OneToOne
-    @JoinColumn(name= "cityFk") //Zobacz czy teraz działa
+    @JoinColumn(name = "cityFk") //Zobacz czy teraz działa
     private City city;
 
     public Hotel(double stars, String allimentation, String description, City city) {

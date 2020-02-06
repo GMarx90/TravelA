@@ -16,7 +16,7 @@ import java.util.Date;
 public class Trip {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_Trip;
     /*  HolidayDuration holiday jeszcze mozna dodac do konstruktora tylko jak to potem podpiac*/
 
@@ -27,7 +27,7 @@ public class Trip {
     private Date return_Date;
 
     @OneToOne
-    @JoinColumn(name="idAirport") //Zabacz czy działa, Dwa razy było Join column
+    @JoinColumn
     private Airport placeOfAirport;
 
 //    private HolidayDuration holiday;

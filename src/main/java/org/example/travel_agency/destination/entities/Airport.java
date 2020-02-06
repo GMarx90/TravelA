@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Airport {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_Airport;
 
     @OneToOne
@@ -22,14 +22,6 @@ public class Airport {
 
     private String airport_Name;
 
-
-//     public Airport(CityAirport cityAirport, String airport_Name) {
-//         this.cityAirport = cityAirport;
-//         this.airport_Name = airport_Name;
-//     }
-//                 NIE WIEM CZY TAKI KONSTRUKTOR JEST TU WGL POTRZEBNY
-
-    
     public void setCityAirport(CityAirport cityAirport) {
         this.cityAirport = cityAirport;
     }
