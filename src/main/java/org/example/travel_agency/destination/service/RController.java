@@ -1,7 +1,6 @@
 package org.example.travel_agency.destination.service;
 
 import org.example.travel_agency.destination.entities.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,20 +16,19 @@ public class RController {
     private HotelService hotelService;
     private CityAirportService cityAirportService;   
     private AirportService airportService;
-    
-        
-        
-    @Autowired
-    public RController(TripsService tripsService, CountryService countryService, CityService cityService, HotelService hotelService, CityAirportService cityAirportService, AirportService airportService) {
+    private OrdersService ordersService;
+
+    public RController(TripsService tripsService, CountryService countryService, CityService cityService, HotelService hotelService, CityAirportService cityAirportService, AirportService airportService, OrdersService ordersService) {
         this.tripsService = tripsService;
         this.countryService = countryService;
         this.cityService = cityService;
         this.hotelService = hotelService;
         this.cityAirportService = cityAirportService;
-        this.airportService = airportService;}
-        
+        this.airportService = airportService;
+        this.ordersService = ordersService;
+    }
 
-     @GetMapping("/countries")
+    @GetMapping("/countries")
     public List<Country> showAllC() {
         return countryService.showAllCountries();}
     
@@ -53,7 +51,12 @@ public class RController {
     @GetMapping("/trips")
     public List<Trip> showAll() {
         return tripsService.showAllTrips();}
-    
+
+    @GetMapping("/orders")
+    public List<Order> showAllOrders() {
+        return ordersService.showAllOrders();}
+
+
     @PostMapping("/country")
     public HttpStatus addCountry(@RequestBody Country country) {
         boolean b = countryService.addCountry(country);
@@ -87,6 +90,13 @@ public class RController {
     @PostMapping("/trip")
     public HttpStatus addTrip(@RequestBody Trip trip) {
         boolean b = tripsService.addTrip(trip);
+        if (b) {return HttpStatus.ACCEPTED;}
+        return HttpStatus.BAD_REQUEST;}
+
+
+    @PostMapping("/order")
+    public HttpStatus addOrder(@RequestBody Order order) {
+        boolean b = ordersService.addOrder(order);
         if (b) {return HttpStatus.ACCEPTED;}
         return HttpStatus.BAD_REQUEST;}
 

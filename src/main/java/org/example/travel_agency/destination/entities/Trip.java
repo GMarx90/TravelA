@@ -3,6 +3,7 @@ package org.example.travel_agency.destination.entities;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,15 +12,16 @@ import java.util.Date;
 @Setter
 @Entity
 @NoArgsConstructor
+@Controller
 public class Trip {
 
     @Id
     @GeneratedValue
-    private int id_Trip;
+    private Integer id_Trip;
     /*  HolidayDuration holiday jeszcze mozna dodac do konstruktora tylko jak to potem podpiac*/
 
     @OneToOne
-    @JoinColumn(name= "hotelId") // zobacz czy działa, Dwa razy było Join column
+    @JoinColumn//(name= "hotelId") // zobacz czy działa, Dwa razy było Join column
     private Hotel hotel;
     private Date depart_Date;
     private Date return_Date;
