@@ -38,7 +38,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/trips").hasRole("USER").and().formLogin().permitAll();
+        http.httpBasic().and().authorizeRequests()
+                .antMatchers("/trips").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/trip").hasRole("ADMIN")
+                .antMatchers("/users").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/user").hasRole("ADMIN")
+                .and().
+                formLogin().permitAll()
+                .and()
+                .csrf().disable();
+
     }
 
 
@@ -49,7 +58,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @EventListener(ApplicationReadyEvent.class)
     public void get() {
-        AppUser appUser = new AppUser("Ewa" , "Kowalska", "ekowalska@wp.pl", "Kraków ul.Zakopiańska 45", "user", passwordEncoder().encode("user"), "USER");
-        appUserRepository.save(appUser);
+        AppUser appUserUser = new AppUser("Ewa" , "Kowalska", "ekowalska@wp.pl", "Kraków ul.Zakopiańska 45", "user", passwordEncoder().encode("user"), "ROLE_USER");
+        AppUser appUserAdmin = new AppUser("admin", passwordEncoder().encode("admin"), "ROLE_ADMIN");
+        appUserRepository.save(appUserUser);
+        appUserRepository.save(appUserAdmin);
     }
 }

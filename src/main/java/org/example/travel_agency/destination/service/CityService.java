@@ -17,7 +17,7 @@ public class CityService {
     private CityRepository cityRepository;
 
     @Autowired
-    public CityService(CityRepository cityRepositor) {
+    public CityService(CityRepository cityRepository) {
         this.cityRepository = cityRepository;
     }
 
