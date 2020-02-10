@@ -1,4 +1,4 @@
-INSTERT INTO City (city_Name, country_fk) values ("Barcelona", 1);
+INSERT INTO City (city_Name, country_fk) values ("Barcelona", 1);
 INSTERT INTO City (city_Name, country_fk)) values ("Valencja", 1);
 INSTERT INTO City (city_Name, country_fk)) values ("Malaga", 1);
 INSTERT INTO City (city_Name, country_fk)) values ("Ibiza", 1);
