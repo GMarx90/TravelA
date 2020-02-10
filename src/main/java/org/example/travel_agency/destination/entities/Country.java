@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table
 @NoArgsConstructor
 public class Country {
 

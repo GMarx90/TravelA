@@ -20,6 +20,7 @@ public class TripsService {
 
     public List<Trip> showAllTrips() {
         return tripRepository.findAll();
+
     }
 
     public boolean addTrip(Trip trip) {

@@ -14,10 +14,10 @@ public class Airport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Airport;
+    private Integer id_Airport;
 
     @OneToOne
-    @JoinColumn//name="cityAirportId")   // Brakło JoinColumn
+    @JoinColumn(name = "cityAirportId")
     private CityAirport cityAirport;
 
     private String airport_Name;
@@ -26,6 +26,6 @@ public class Airport {
         this.cityAirport = cityAirport;
     }
 
-    }
+}
 
 

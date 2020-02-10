@@ -4,15 +4,15 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class HolidayDuration {
-        LocalDate dateOfDeparture; /*= LocalDate.parse("2020-06-27");*/
-        LocalDate dateOfReturn;/* = LocalDate.parse("2020-07-11");*/
+    LocalDate dateOfDeparture; /*= LocalDate.parse("2020-06-27");*/
+    LocalDate dateOfReturn;/* = LocalDate.parse("2020-07-11");*/
 
 
-        public Period holdayDuration(LocalDate dateOfDeparture, LocalDate dateOfReturn){
-            Period holidayDuration=Period.between(dateOfDeparture, dateOfReturn);
-            return holidayDuration;
+    public Period holidayDuration(LocalDate dateOfDeparture, LocalDate dateOfReturn) {
+        Period holidayDuration = Period.between(dateOfDeparture, dateOfReturn);
+        return holidayDuration;
 
-        }
+    }
 
     public HolidayDuration(LocalDate dateOfDeparture, LocalDate dateOfReturn) {
         this.dateOfDeparture = dateOfDeparture;

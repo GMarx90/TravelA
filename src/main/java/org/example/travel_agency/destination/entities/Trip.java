@@ -18,10 +18,9 @@ public class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_Trip;
-    /*  HolidayDuration holiday jeszcze mozna dodac do konstruktora tylko jak to potem podpiac*/
 
     @OneToOne
-    @JoinColumn//(name= "hotelId") // zobacz czy działa, Dwa razy było Join column
+    @JoinColumn(name= "hotelId")
     private Hotel hotel;
     private Date depart_Date;
     private Date return_Date;
@@ -30,7 +29,6 @@ public class Trip {
     @JoinColumn
     private Airport placeOfAirport;
 
-//    private HolidayDuration holiday;
     private int price;
 
 
@@ -39,7 +37,6 @@ public class Trip {
         this.depart_Date = depart_Date;
         this.return_Date = return_Date;
         this.placeOfAirport = placeOfAirport;
-   /*     this.holiday = holiday;*/
         this.price = price;
     }
 

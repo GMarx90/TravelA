@@ -17,9 +17,9 @@ public class RController {
     private CityAirportService cityAirportService;
     private AirportService airportService;
     private OrdersService ordersService;
-    private AppUserService appUserService;
+    //private AppUserService appUserService;
 
-    public RController(AppUserService appUserServive, TripsService tripsService, CountryService countryService, CityService cityService, HotelService hotelService, CityAirportService cityAirportService, AirportService airportService, OrdersService ordersService) {
+    public RController( TripsService tripsService, CountryService countryService, CityService cityService, HotelService hotelService, CityAirportService cityAirportService, AirportService airportService, OrdersService ordersService) {
         this.tripsService = tripsService;
         this.countryService = countryService;
         this.cityService = cityService;
@@ -27,23 +27,23 @@ public class RController {
         this.cityAirportService = cityAirportService;
         this.airportService = airportService;
         this.ordersService = ordersService;
-        this.appUserService = appUserServive;
+        // this.appUserService = appUserServive;
     }
 
     @GetMapping("/countries")
-    public List<Country> showAllC() {
+    public List<Country> showAllCountries() {
         return countryService.showAllCountries();
     }
 
     @GetMapping("/cities")
-    public List<Trip> showAllCities() {
-        return tripsService.showAllTrips();
+    public List<City> showAllCities() {
+        return (cityService.showAllCities());
     }
 
     @GetMapping("/hotels")
     public List<Hotel> showAllHotels() {
-        return hotelService.showAllHotels();
-    }
+        return hotelService.showAllHotels();}
+
 
     @GetMapping("/departcities")
     public List<CityAirport> showAllCityAirport() {
@@ -129,14 +129,14 @@ public class RController {
         }
         return HttpStatus.BAD_REQUEST;
     }
-
-    @PostMapping("/user")
-    public HttpStatus addUser(@RequestBody AppUser appUser) {
-        boolean b = appUserService.addAppUser(appUser);
-        if (b) {
-            return HttpStatus.ACCEPTED;
-        }
-        return HttpStatus.BAD_REQUEST;
-    }
+//
+//    @PostMapping("/user")
+//    public HttpStatus addUser(@RequestBody AppUser appUser) {
+//        boolean b = appUserService.addAppUser(appUser);
+//        if (b) {
+//            return HttpStatus.ACCEPTED;
+//        }
+//        return HttpStatus.BAD_REQUEST;
+//    }
 
 }

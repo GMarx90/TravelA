@@ -15,11 +15,10 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_City;
-
     private String city_Name;
 
     @OneToOne
-    @JoinColumn//(name= "countryFk") //Zobacz czy teraz działa
+    @JoinColumn(name = "countryFk")
     private Country country;
 
     public City(String city_Name, Country country) {

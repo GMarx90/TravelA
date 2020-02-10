@@ -20,7 +20,7 @@ public class Hotel {
     private String description;
 
     @OneToOne
-    @JoinColumn//(name = "cityFk") //Zobacz czy teraz działa
+    @JoinColumn(name = "cityFk")
     private City city;
 
     public Hotel(double stars, String allimentation, String description, City city) {
