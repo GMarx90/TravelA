@@ -1,16 +1,19 @@
 package org.example.travel_agency.destination.service;
 
+import org.example.travel_agency.destination.entities.Country;
+import org.example.travel_agency.destination.entities.Trip;
 import org.example.travel_agency.destination.entities.TripOrder;
 import org.example.travel_agency.destination.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrdersService {
 
-    private OrderRepository orderRepository;
+   final private OrderRepository orderRepository;
 
     @Autowired
     public OrdersService(OrderRepository orderRepository) {
@@ -28,6 +31,13 @@ public class OrdersService {
     public List<TripOrder> showAllOrders() {
         return orderRepository.findAll();
     }
+
+
+/*   public List<Country> findTripInCountry(Integer id_Trip, String country_name){
+        return orderRepository.findOne(id_Trip)
+                .getCountry}*/
+
+
 
     public boolean addOrder(TripOrder tripOrder) {
         orderRepository.save(tripOrder);

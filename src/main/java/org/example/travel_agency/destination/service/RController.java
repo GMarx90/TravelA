@@ -1,6 +1,7 @@
 package org.example.travel_agency.destination.service;
 
 import org.example.travel_agency.destination.entities.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +19,7 @@ public class RController {
     private AirportService airportService;
     private OrdersService ordersService;
 
+    @Autowired
     public RController(TripsService tripsService, CountryService countryService, CityService cityService, HotelService hotelService, CityAirportService cityAirportService, AirportService airportService, OrdersService ordersService) {
         this.tripsService = tripsService;
         this.countryService = countryService;
@@ -55,6 +57,12 @@ public class RController {
     @GetMapping("/orders")
     public List<TripOrder> showAllOrders() {
         return ordersService.showAllOrders();}
+
+        @GetMapping("/{countryName}")
+public List<Trip> findTripToCountry(@PathVariable ("countryName") Country country){
+    return tripsService.findTripToCountry(country);
+
+}
 
 
     @PostMapping("/country")

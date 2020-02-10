@@ -1,11 +1,14 @@
 package org.example.travel_agency.destination.service;
 
+import org.example.travel_agency.destination.entities.Country;
+import org.example.travel_agency.destination.entities.Hotel;
 import org.example.travel_agency.destination.entities.Trip;
 import org.example.travel_agency.destination.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Calendar;
 import java.util.List;
 
 @Service
@@ -26,5 +29,11 @@ public class TripsService {
         tripRepository.save(trip);
         return true;
     }
+public List<Trip> findTripToCountry (Country country){
+    return (List<Trip>) tripRepository.findOne(country);
 
+
+
+
+}
 }
