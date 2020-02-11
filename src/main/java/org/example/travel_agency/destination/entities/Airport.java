@@ -17,7 +17,7 @@ public class Airport {
     private Integer id_Airport;
 
     @OneToOne
-    @JoinColumn(name = "cityAirportId")
+    @JoinColumn(name = "cityAirportFk")
     private CityAirport cityAirport;
 
     private String airport_Name;

@@ -26,11 +26,5 @@ public class City {
         this.country = country;
     }
 
-    @Override
-    public String toString() {
-        return "City{" +
-                "city='" + city_Name + '\'' +
-                ", country=" + country +
-                '}';
-    }
 }
+

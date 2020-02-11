@@ -20,16 +20,16 @@ public class Trip {
     private Integer id_Trip;
 
     @OneToOne
-    @JoinColumn(name= "hotelId")
+    @JoinColumn(name = "hotelFk")
     private Hotel hotel;
     private Date depart_Date;
     private Date return_Date;
 
     @OneToOne
-    @JoinColumn
+    @JoinColumn(name = "airportFk")
     private Airport placeOfAirport;
 
-    private int price;
+    private double price;
 
 
     public Trip(Hotel hotel, Date depart_Date, Date return_Date, Airport placeOfAirport, int price) {

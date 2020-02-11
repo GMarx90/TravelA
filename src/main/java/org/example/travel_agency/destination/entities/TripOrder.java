@@ -25,10 +25,10 @@ public class TripOrder {
     private int babiesNumber;
 
     @OneToOne
-    @JoinColumn(name = "TripId")
+    @JoinColumn(name = "TripFk")
     private Trip trip;
     @OneToOne
-    @JoinColumn(name = "AppUserId")
+    @JoinColumn(name = "AppUserFk")
     private AppUser appUser;
 
 //        public Double calculateTotalPrice(Trip trip){
