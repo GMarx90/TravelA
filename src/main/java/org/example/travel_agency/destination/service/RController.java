@@ -3,9 +3,11 @@ package org.example.travel_agency.destination.service;
 import org.example.travel_agency.destination.App;
 import org.example.travel_agency.destination.entities.*;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -125,6 +127,12 @@ public class RController {
             return HttpStatus.ACCEPTED;
         }
         return HttpStatus.BAD_REQUEST;
+    }
+
+    @GetMapping("/trip/cost/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public double calculate(@PathVariable Long id) {
+      return 0;             //TODO implement CalculateCost()
     }
 
 
