@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -63,6 +65,24 @@ public class RController {
         return tripsService.showAllTrips();
     }
 
+    @GetMapping("/trips/{country_name}")
+    public List<Trip> showByCountry(@PathVariable("country_name") String country_Name) {
+
+        return tripsService.showAllTrips()
+                .stream()
+                .filter(trip -> Objects.equals(trip.getHotel().getCity().getCountry().getCountry_Name(), country_Name))
+                .collect(Collectors.toList());
+    }
+
+//    @GetMapping("/trips/{city_Airport_Name}")
+//    public List<Trip> showByDepartCity(@PathVariable("city_Airport_Name") String city_Airport_Name) {
+//
+//        return tripsService.showAllTrips()
+//                .stream()
+//                .filter(trip -> Objects.equals(trip.getPlaceOfAirport().getCityAirport().getCity_Airport_Name(), city_Airport_Name))
+//                .collect(Collectors.toList());
+//    }
+
     @GetMapping("/orders")
     public List<TripOrder> showAllOrders() {
         return ordersService.showAllOrders();
@@ -72,7 +92,6 @@ public class RController {
     public List<AppUser> showAllUsers() {
         return appUserService.showAllUser();
     }
-
 
 
     @PostMapping("/country")
@@ -132,7 +151,7 @@ public class RController {
     @GetMapping("/trip/cost/{id}")
     @ResponseStatus(HttpStatus.OK)
     public double calculate(@PathVariable Long id) {
-      return 0;             //TODO implement CalculateCost()
+        return 0;             //TODO implement CalculateCost()
     }
 
 
