@@ -7,7 +7,6 @@ import org.example.travel_agency.destination.repository.TripRepository;
 public class Cost {
 
 
-
         PersonNumb personNumb;
         private double adultPrice;
         private double childPrice= 0.3*adultPrice;
@@ -20,9 +19,6 @@ public class Cost {
     return "Cena całkowita wynosi "+ price +"zł";
 
 }}*/
-
-
-
 
         public PersonNumb getPersonNumb() {
                 return personNumb;

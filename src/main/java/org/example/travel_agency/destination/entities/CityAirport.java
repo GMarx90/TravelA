@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * Klasa miasta, w którym jest lotnisko docelowe/
+ */
 @Getter
 @Setter
 @Entity

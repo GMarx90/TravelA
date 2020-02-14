@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * Klasa miasta docelowego/
+ */
 @Getter
 @Setter
 @Entity

@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * Klasa lotniska/
+ */
 @Getter
 @Setter
 @Entity
@@ -17,23 +20,15 @@ public class Airport {
     private int id_Airport;
 
     @OneToOne
-    @JoinColumn(name="cityAirportId")   // Brakło JoinColumn
+    @JoinColumn(name = "cityAirportId")
     private CityAirport cityAirport;
 
     private String airport_Name;
 
-
-//     public Airport(CityAirport cityAirport, String airport_Name) {
-//         this.cityAirport = cityAirport;
-//         this.airport_Name = airport_Name;
-//     }
-//                 NIE WIEM CZY TAKI KONSTRUKTOR JEST TU WGL POTRZEBNY
-
-    
     public void setCityAirport(CityAirport cityAirport) {
         this.cityAirport = cityAirport;
     }
 
-    }
+}
 
 
